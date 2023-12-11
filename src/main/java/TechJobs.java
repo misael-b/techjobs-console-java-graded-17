@@ -123,15 +123,17 @@ public class TechJobs {
         if (someJobs.isEmpty()){
             System.out.print("No Results");
         } else {
-            String results = "\n*****\n";
+            String results = "";
             for (HashMap<String, String> job : someJobs){ //iterates through each job (hashmap)
+                results += "\n*****\n";
                 for (Map.Entry<String, String> jobItem : job.entrySet()) { //iterates through each key/value pair
                     String jobProperty =jobItem.getKey() + ": " + jobItem.getValue() +"\n";
                     results += jobProperty ;
                 }
+                results += "*****\n";
             }
-            results += "*****";
-            System.out.println(results);
+
+            System.out.print(results);
         }
     }
 }

@@ -93,9 +93,23 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> job : allJobs) { //iterates through all jobs (hashmap)
+            for (String jobValues : job.values()){ //iterates through all values
+                for (String word :jobValues.split(",| ")){ //spits strings by spaces or commas
+                    if (word.equalsIgnoreCase(value)){ //
+                        if (!jobs.contains(job)){
+                            jobs.add(job);
+                        }
+
+                    }
+                }
+            }
+        }
+        return jobs;
 
         // TODO - implement this method
-        return null;
     }
 
     /**
