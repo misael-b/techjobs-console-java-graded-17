@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Collections;
 
 /**
  * Created by LaunchCode
@@ -44,6 +45,7 @@ public class TechJobs {
                 } else {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
+                    Collections.sort(results); // sorts list results alphabetically
 
                     System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 

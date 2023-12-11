@@ -49,8 +49,9 @@ public class JobData {
 
         // load data, if not already loaded
         loadData();
-
-        return allJobs;
+        ArrayList<HashMap<String, String>> clone = new ArrayList<>();
+        clone = (ArrayList<HashMap<String, String>>) allJobs.clone();
+        return clone;
     }
 
     /**
@@ -109,7 +110,6 @@ public class JobData {
         }
         return jobs;
 
-        // TODO - implement this method
     }
 
     /**
