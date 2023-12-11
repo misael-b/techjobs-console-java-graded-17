@@ -1,3 +1,4 @@
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -119,7 +120,18 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()){
+            System.out.print("No Results");
+        } else {
+            String results = "\n*****\n";
+            for (HashMap<String, String> job : someJobs){ //iterates through each job (hashmap)
+                for (Map.Entry<String, String> jobItem : job.entrySet()) { //iterates through each key/value pair
+                    String jobProperty =jobItem.getKey() + ": " + jobItem.getValue() +"\n";
+                    results += jobProperty ;
+                }
+            }
+            results += "*****";
+            System.out.println(results);
+        }
     }
 }
