@@ -74,9 +74,9 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
 
-            String aValue = row.get(column).toLowerCase();
+            String aValue = row.get(column).toLowerCase(); // case insensitive
 
-            if (aValue.contains(value.toLowerCase())) {
+            if (aValue.contains(value.toLowerCase())) { // case insensitive
                 jobs.add(row);
             }
         }
@@ -96,10 +96,10 @@ public class JobData {
         loadData();
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> job : allJobs) { //iterates through all jobs (hashmap)
-            for (String jobValues : job.values()){ //iterates through all values
-                for (String word :jobValues.split(",| ")){ //spits strings by spaces or commas
-                    if (word.equalsIgnoreCase(value)){ //
+        for (HashMap<String, String> job : allJobs) { //iterates through all jobs (hashmap) in arraylist
+            for (String jobValues : job.values()){ //iterates through collection of all values for each hashmap
+                for (String word : jobValues.split(",| ")){ //spits strings by spaces or commas
+                    if (word.equalsIgnoreCase(value)){ //case insensitive
                         if (!jobs.contains(job)){
                             jobs.add(job);
                         }
