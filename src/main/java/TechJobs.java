@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -43,11 +40,12 @@ public class TechJobs {
                 } else {
 
                     ArrayList<String> results = JobData.findAll(columnChoice);
+                    Collections.sort(results);
 
                     System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 
                     // Print list of skills, employers, etc
-                    for (String item : results) {
+                    for (String item :  results) {
                         System.out.println(item);
                     }
                 }
@@ -119,8 +117,18 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if(someJobs.isEmpty()){
+            System.out.print("No Results");
+        }else {
+            for(HashMap<String, String> jobs: someJobs){
+            System.out.println("\n*****");
+            for(Map.Entry<String, String> job : jobs.entrySet()){
+                System.out.println(job.getKey() + ": " + job.getValue());
+            }
+            System.out.println("*****");
+        }}
 
-        System.out.println("printJobs is not implemented yet");
+
 
     }
 }
